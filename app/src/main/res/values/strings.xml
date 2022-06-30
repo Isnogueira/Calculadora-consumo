@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Calculadora de Gorjeta</string>
+    <string name="data">Data do consumo</string>
+    <string name="nome_estabelecimento">Nome do estabelecimento</string>
+    <string name="produtos">Produtos</string>
+    <string name="total">Total da conta</string>
+    <string name="valor_gorjeta">Gorjeta</string>
+    <string name="percentual_gorjeta">Percentual gorjeta</string>
+    <string name="qtd_pessoas">Quantidade de pessoas</string>
+    <string name="calcular_button">Calcular</string>
+
+    <string name="result_titulo">Detalhes da sua conta</string>
+    <string name="total_pessoa">Valor por pessoa</string>
+
+</resources>

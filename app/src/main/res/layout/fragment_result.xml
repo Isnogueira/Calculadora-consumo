@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#005377"
+    tools:context=".ResultFragment" >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="374dp"
+        android:layout_height="473dp"
+        android:layout_marginBottom="73dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/btnCompatilhar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:background="@null"
+                android:text="@string/nome_estabelecimento"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultEstabelecimento"
+                android:layout_width="190dp"
+                android:layout_height="44dp"
+                android:background="@null"
+                android:textColor="#D5C67A" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:background="@null"
+                android:text="@string/data"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultData"
+                android:layout_width="195dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textColor="#D5C67A" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="173dp"
+                android:layout_height="203dp"
+                android:text="@string/produtos"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultProdutos"
+                android:layout_width="196dp"
+                android:layout_height="match_parent"
+                android:textColor="#D5C67A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:text="@string/total"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultTotalConta"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:textColor="#D5C67A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:text="@string/qtd_pessoas"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultQtd"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:textColor="#D5C67A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:text="@string/valor_gorjeta"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblResultGorjeta"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:textColor="#D5C67A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:text="@string/total_pessoa"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/lblValorPessoa"
+                android:layout_width="180dp"
+                android:layout_height="44dp"
+                android:textColor="#D5C67A" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="179dp"
+        android:layout_height="28dp"
+        android:text="@string/result_titulo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <Button
+        android:id="@+id/btnCompatilhar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#D5C67A"
+        android:text="Compartilhar"
+        android:textColor="#052F5F"
+        app:cornerRadius="40dp"
+        app:icon="?attr/actionModeShareDrawable"
+        app:iconTint="#052F5F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

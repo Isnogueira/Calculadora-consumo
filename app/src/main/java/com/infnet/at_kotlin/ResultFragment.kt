@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.infnet.at_kotlin.model.Conta
+
 
 class ResultFragment : Fragment() {
 
@@ -64,14 +66,23 @@ class ResultFragment : Fragment() {
     }
 
    private fun onClickBtnListener(conta: Conta?){
-        val shareIntent = Intent(Intent.ACTION_SEND)
-        shareIntent.type = "text/plain"
-        shareIntent.putExtra(Intent.EXTRA_TEXT, conta.toString())
 
-        val chooser =
-            Intent.createChooser(shareIntent, "Selecione uma opção de compartilhamento")
-        this.startActivity(chooser)
+       val shareIntent = Intent(Intent.ACTION_SEND)
+       shareIntent.type = "text/plain"
+       shareIntent.putExtra(Intent.EXTRA_TEXT, conta.toString())
+
+        if (context?.let { shareIntent.resolveActivity(it.packageManager) } != null) {
+            val chooser =
+                Intent.createChooser(shareIntent, "Selecione uma opção de compartilhamento")
+            this.startActivity(chooser)
+        } else{
+            Toast.makeText(
+                activity?.baseContext,
+                "Nenhum app disponível",
+                Toast.LENGTH_LONG
+            ).show()
+        }
    }
 
+   }
 
-}

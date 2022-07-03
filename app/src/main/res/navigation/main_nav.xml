@@ -18,9 +18,5 @@
         android:id="@+id/resultFragment"
         android:name="com.infnet.at_kotlin.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <action
-            android:id="@+id/action_resultFragment_to_inputFragment"
-            app:destination="@id/inputFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_result" />
 </navigation>

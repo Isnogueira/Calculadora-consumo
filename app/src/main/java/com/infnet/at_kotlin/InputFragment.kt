@@ -8,15 +8,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.infnet.at_kotlin.interfaces.Comunicator
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.infnet.at_kotlin.model.Conta
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class InputFragment : Fragment() {
-
-    private lateinit var comunicator: Comunicator
 
     private lateinit var estabelecimento: EditText
     private lateinit var data: TextView
@@ -25,43 +23,65 @@ class InputFragment : Fragment() {
     private lateinit var percGorjeta: EditText
     private lateinit var totalConta: EditText
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_input, container, false)
+       val root = inflater.inflate(R.layout.fragment_input, container, false)
 
-        comunicator = activity as Comunicator
+        val viewModel = ViewModelProvider(this).get(DataViewModel::class.java)
+
+        val data: TextView = root.findViewById(R.id.txtData)
+        viewModel.data.observe(viewLifecycleOwner, Observer {
+            data.text = it
+        })
+
+        return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         estabelecimento = view.findViewById(R.id.txtEstabelecimento)
-        data = view.findViewById(R.id.txtData)
         produtos = view.findViewById(R.id.txtProdutos)
         qtdPessoas = view.findViewById(R.id.txtQtdPessoas)
         percGorjeta = view.findViewById(R.id.txtGorjeta)
         totalConta = view.findViewById(R.id.txtTotal)
-
-        // Setar Data e hora
-        val date = Calendar.getInstance().time
-        val dateTimeFormat = SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.getDefault())
-        data.text = dateTimeFormat.format(date)
+        data = view.findViewById(R.id.txtData)
 
         val btnCalcular = view.findViewById<Button>(R.id.btnCalcular)
+        btnCalcular.setOnClickListener() {
 
-        btnCalcular.setOnClickListener(){
+            val viewModel = ViewModelProvider(this).get(DataViewModel::class.java)
+
+            viewModel.data.observe(viewLifecycleOwner, Observer {
+                data.text = it
+            })
+
+            var contaViewModel : ContaViewModel? = null
+            activity?.let {
+                contaViewModel = ViewModelProvider(it)[ContaViewModel::class.java]
+            }
 
             val conta = atualizarDadosConta()
+            contaViewModel?.conta = Conta(
+                conta.estabelecimento,
+                conta.data,
+                conta.produtos,
+                conta.totalConta,
+                conta.qtdPessoas,
+                conta.valorGorjeta,
+                conta.totalPessoa
 
-            comunicator.passData(conta)
+            )
+            findNavController().navigate(R.id.action_inputFragment_to_resultFragment)
         }
 
-        return view
     }
 
-    fun atualizarDadosConta(): Conta {
 
-        val estabelecimentoConvertido = estabelecimento.text.toString()
-        val dataConvertida = data.text.toString()
-        val produtosConvertido = produtos.text.toString()
+    private fun atualizarDadosConta(): Conta {
 
         val totalConvertido = totalConta.text.toString().toDouble()
         val qtdPessoasConvertido = qtdPessoas.text.toString().toInt()
@@ -71,15 +91,17 @@ class InputFragment : Fragment() {
         val valorTotalConta = calcularValorTotalConta(totalConvertido, valorGorjeta)
         val valorPessoa = calcularValorPorPessoa(valorTotalConta, qtdPessoasConvertido)
 
-        val conta = Conta()
-        conta.estabelecimento = estabelecimentoConvertido
-        conta.data = dataConvertida
-        conta.produtos = produtosConvertido
-        conta.totalConta = valorTotalConta.toString()
-        conta.valorGorjeta = valorGorjeta.toString()
-        conta.qtdPessoas = qtdPessoasConvertido.toString()
-        conta.totalPessoa = valorPessoa.toString()
+        val conta = Conta(
+            estabelecimento.text.toString(),
+            data.text.toString(),
+            produtos.text.toString(),
+            valorTotalConta.toString(),
+            qtdPessoasConvertido.toString(),
+            valorGorjeta.toString(),
+            valorPessoa.toString()
+        )
 
         return conta
-        }
     }
+
+}

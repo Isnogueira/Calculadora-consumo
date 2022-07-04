@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inputFragment"
-        android:name="com.infnet.at_kotlin.InputFragment"
+        android:name="com.infnet.at_kotlin.ui.InputFragment"
         android:label="fragment_input"
         tools:layout="@layout/fragment_input" >
         <action
@@ -16,7 +16,19 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.infnet.at_kotlin.ResultFragment"
+        android:name="com.infnet.at_kotlin.ui.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_saveActivity"
+            app:destination="@id/saveActivity" />
+        <action
+            android:id="@+id/action_resultFragment_to_inputFragment"
+            app:destination="@id/inputFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/saveActivity"
+        android:name="com.infnet.at_kotlin.SaveActivity"
+        android:label="activity_save"
+        tools:layout="@layout/activity_save" />
 </navigation>

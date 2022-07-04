@@ -1,16 +1,20 @@
 package com.infnet.at_kotlin.model
 
-class Conta (
-    var estabelecimento: String,
-    var data: String,
-    var produtos: String,
-    var totalConta: String,
-    var qtdPessoas: String,
-    var valorGorjeta: String,
-    var totalPessoa: String,
-) {
-
+data class Conta (
+    var estabelecimento: String?,
+    var data: String?,
+    var produtos: String?,
+    var totalConta: String?,
+    var qtdPessoas: String?,
+    var valorGorjeta: String?,
+    var totalPessoa: String?,
+)
+{
     override fun toString(): String {
+        return super.toString()
+    }
+
+     fun criarLayoutCompartilharDados(): String {
 
         return (
                 "------------------------------------------------------" + "\n" +

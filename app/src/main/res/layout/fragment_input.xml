@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#005377"
-    tools:context=".InputFragment">
+    tools:context=".ui.InputFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="340dp"
-        android:layout_height="444dp"
+        android:layout_width="363dp"
+        android:layout_height="662dp"
         android:layout_marginTop="48dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,22 +112,18 @@
             android:inputType="numberDecimal"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="92dp"
+            android:backgroundTint="#D5C67A"
+            android:text="@string/calcular_button"
+            android:textColor="#052F5F"
+            android:textSize="16sp"
+            app:cornerRadius="40dp" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="157dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginBottom="92dp"
-        android:backgroundTint="#D5C67A"
-        android:text="@string/calcular_button"
-        android:textColor="#052F5F"
-        android:textSize="16sp"
-        app:cornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.448" />
 </androidx.constraintlayout.widget.ConstraintLayout>

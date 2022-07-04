@@ -1,4 +1,4 @@
-package com.infnet.at_kotlin
+package com.infnet.at_kotlin.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,12 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.infnet.at_kotlin.R
+import com.infnet.at_kotlin.calcularGorjeta
+import com.infnet.at_kotlin.calcularValorPorPessoa
+import com.infnet.at_kotlin.calcularValorTotalConta
 import com.infnet.at_kotlin.model.Conta
+import com.infnet.at_kotlin.ui.DataViewModel
 
 
 class InputFragment : Fragment() {

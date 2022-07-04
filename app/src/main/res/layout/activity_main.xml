@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/containerInput"
-        android:name="com.infnet.at_kotlin.InputFragment"
+        android:name="com.infnet.at_kotlin.ui.InputFragment"
         android:layout_width="373dp"
         android:layout_height="675dp"
         app:layout_constraintBottom_toBottomOf="parent"

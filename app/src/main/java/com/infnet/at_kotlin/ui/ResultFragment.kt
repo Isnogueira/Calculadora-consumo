@@ -1,4 +1,4 @@
-package com.infnet.at_kotlin
+package com.infnet.at_kotlin.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.infnet.at_kotlin.R
+import com.infnet.at_kotlin.SaveActivity
+import com.infnet.at_kotlin.adapter.AdapterConta
 import com.infnet.at_kotlin.model.Conta
 
 
@@ -23,16 +29,40 @@ class ResultFragment : Fragment() {
     private lateinit var resultValorGorjeta: TextView
     private lateinit var resultValorPessoa: TextView
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result, container, false)
-    }
+        return inflater.inflate(R.layout.fragment_result, container, false) }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+            obterViewModel(view)
+            val btnCompatilhar = view.findViewById<Button>(R.id.btnCompatilhar)
+            btnCompatilhar.setOnClickListener() {
+                val conta = obterViewModel(view)
+
+                onClickBtnCompartilharListener(conta)
+            }
+
+            val btnSalvar = view.findViewById<Button>(R.id.btnSalvar)
+            btnSalvar.setOnClickListener(){
+                val saveIntent = Intent(context, SaveActivity::class.java)
+                val contaViewModel = obterViewModel(view)
+                saveIntent.putExtra("estabelecimento", contaViewModel!!.estabelecimento)
+                saveIntent.putExtra("data", contaViewModel.data)
+                saveIntent.putExtra("totalConta", contaViewModel.totalConta)
+                saveIntent.putExtra("qtdPessoas", contaViewModel.qtdPessoas)
+                saveIntent.putExtra("valorGorjeta", contaViewModel.valorGorjeta)
+                saveIntent.putExtra("valorPessoa", contaViewModel.totalPessoa)
+
+                startActivity(saveIntent)
+            }
+
+    }
+
+    private fun obterViewModel(view: View) : Conta?{
 
         resultEstabelecimento = view.findViewById(R.id.lblResultEstabelecimento)
         resultData = view.findViewById(R.id.lblResultData)
@@ -46,30 +76,27 @@ class ResultFragment : Fragment() {
         activity?.let {
             contaViewModel = ViewModelProvider(it)[ContaViewModel::class.java]
         }
-            val conta = contaViewModel!!.conta
-            if (conta != null) {
-                resultEstabelecimento.text = conta.estabelecimento
-                resultData.text = conta.data
-                resultProdutos.text = conta.produtos
-                resultTotalConta.text = conta.totalConta
-                resultQtdPessoas.text = conta.qtdPessoas
-                resultValorGorjeta.text = conta.valorGorjeta
-                resultValorPessoa.text = conta.totalPessoa
-            }
+        val conta = contaViewModel!!.conta
+        if (conta != null) {
+            resultEstabelecimento.text = conta.estabelecimento
+            resultData.text = conta.data
+            resultProdutos.text = conta.produtos
+            resultTotalConta.text = conta.totalConta
+            resultQtdPessoas.text = conta.qtdPessoas
+            resultValorGorjeta.text = conta.valorGorjeta
+            resultValorPessoa.text = conta.totalPessoa
+        }
 
-
-            val btnCompatilhar = view.findViewById<Button>(R.id.btnCompatilhar)
-            btnCompatilhar.setOnClickListener() {
-                onClickBtnListener(conta)
-            }
-
+        return conta
     }
 
-   private fun onClickBtnListener(conta: Conta?){
+    private fun onClickBtnCompartilharListener(conta: Conta?){
 
        val shareIntent = Intent(Intent.ACTION_SEND)
        shareIntent.type = "text/plain"
-       shareIntent.putExtra(Intent.EXTRA_TEXT, conta.toString())
+        if (conta != null) {
+            shareIntent.putExtra(Intent.EXTRA_TEXT, conta.criarLayoutCompartilharDados())
+        }
 
         if (context?.let { shareIntent.resolveActivity(it.packageManager) } != null) {
             val chooser =
@@ -83,6 +110,8 @@ class ResultFragment : Fragment() {
             ).show()
         }
    }
+
+
 
    }
 

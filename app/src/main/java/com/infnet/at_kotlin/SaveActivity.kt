@@ -64,6 +64,15 @@ class SaveActivity : AppCompatActivity() {
         listaContas.add(contaInput)
         listaContas.add(contaInput)
         listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
+        listaContas.add(contaInput)
 
 
     }

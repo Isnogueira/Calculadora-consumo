@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Calculadora de Gorjeta</string>
+    <!--Inputs-->
+    <string name="titulo_inputs">Dados da conta</string>
     <string name="data">Data do consumo</string>
     <string name="nome_estabelecimento">Nome do estabelecimento</string>
     <string name="produtos">Produtos</string>
@@ -9,6 +11,7 @@
     <string name="qtd_pessoas">Quantidade de pessoas</string>
     <string name="calcular_button">Calcular</string>
 
+    <!--Resultado-->
     <string name="result_titulo">Detalhes da sua conta</string>
     <string name="total_pessoa">Valor por pessoa</string>
 

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A0C3EE"
     android:orientation="vertical"
-    android:background="#005377"
     tools:context=".SaveActivity">
 
     <androidx.recyclerview.widget.RecyclerView

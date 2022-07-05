@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#005377"
+    android:background="#A7CDFA"
     tools:context=".ui.InputFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="363dp"
-        android:layout_height="662dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="362dp"
+        android:layout_height="537dp"
+        android:layout_marginTop="100dp"
+        android:background="#A0C3EE"
         android:orientation="vertical"
+        android:padding="10dp"
+        app:circularflow_radiusInDP="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,8 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nome_estabelecimento"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/txtEstabelecimento"
@@ -32,21 +36,22 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/data"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtData"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <TextView
@@ -54,23 +59,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/produtos"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <MultiAutoCompleteTextView
             android:id="@+id/txtProdutos"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:minHeight="48dp"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/qtd_pessoas"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/txtQtdPessoas"
@@ -78,15 +85,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/percentual_gorjeta"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/txtGorjeta"
@@ -94,15 +102,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/total"
-            android:textColor="#D5C67A"
-            android:textSize="16sp" />
+            android:textColor="#495A6E"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/txtTotal"
@@ -110,7 +119,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnCalcular"
@@ -118,12 +127,28 @@
             android:layout_height="61dp"
             android:layout_marginTop="9dp"
             android:layout_marginBottom="92dp"
-            android:backgroundTint="#D5C67A"
+            android:backgroundTint="#495A6E"
             android:text="@string/calcular_button"
-            android:textColor="#052F5F"
+            android:textColor="#A0C3EE"
             android:textSize="16sp"
             app:cornerRadius="40dp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/titulo_inputs"
+        android:textColor="#495A6E"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

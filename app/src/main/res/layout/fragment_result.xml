@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#005377"
-    tools:context=".ui.ResultFragment" >
+    android:background="#A7CDFA"
+    tools:context=".ui.ResultFragment">
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="361dp"
-        android:layout_height="463dp"
+        android:layout_width="368dp"
+        android:layout_height="496dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="5dp"
-        android:background="@null"
+        android:layout_marginBottom="8dp"
+        android:background="#A0C3EE"
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,16 +24,15 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="180dp"
-                android:layout_height="44dp"
+                android:layout_width="139dp"
+                android:layout_height="match_parent"
                 android:background="@null"
                 android:text="@string/nome_estabelecimento"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_width="180dp"
                 android:layout_height="44dp"
                 android:background="@null"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
 
         </TableRow>
 
@@ -55,7 +55,7 @@
                 android:layout_height="44dp"
                 android:background="@null"
                 android:text="@string/data"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
@@ -63,7 +63,7 @@
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
 
         </TableRow>
 
@@ -74,17 +74,17 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="173dp"
-                android:layout_height="203dp"
+                android:layout_width="158dp"
+                android:layout_height="201dp"
                 android:text="@string/produtos"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblResultProdutos"
-                android:layout_width="180dp"
+                android:layout_width="135dp"
                 android:layout_height="match_parent"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
@@ -97,14 +97,14 @@
                 android:layout_width="180dp"
                 android:layout_height="44dp"
                 android:text="@string/total"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblResultTotalConta"
                 android:layout_width="180dp"
                 android:layout_height="44dp"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
@@ -117,14 +117,14 @@
                 android:layout_width="180dp"
                 android:layout_height="44dp"
                 android:text="@string/qtd_pessoas"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblResultQtd"
                 android:layout_width="180dp"
                 android:layout_height="44dp"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
@@ -137,14 +137,14 @@
                 android:layout_width="180dp"
                 android:layout_height="44dp"
                 android:text="@string/valor_gorjeta"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblResultGorjeta"
-                android:layout_width="180dp"
+                android:layout_width="100dp"
                 android:layout_height="44dp"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
@@ -157,24 +157,25 @@
                 android:layout_width="180dp"
                 android:layout_height="44dp"
                 android:text="@string/total_pessoa"
-                android:textColor="@color/white"
+                android:textColor="#495A6E"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/lblValorPessoa"
                 android:layout_width="180dp"
                 android:layout_height="44dp"
-                android:textColor="#D5C67A" />
+                android:textColor="@color/black" />
         </TableRow>
     </TableLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="385dp"
+        android:layout_width="374dp"
         android:layout_height="114dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="17dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -185,24 +186,24 @@
             android:id="@+id/btnCompatilhar"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:backgroundTint="#D5C67A"
+            android:backgroundTint="#495A6E"
             android:text="Compartilhar"
-            android:textColor="#052F5F"
+            android:textColor="#A0C3EE"
             app:cornerRadius="40dp"
             app:icon="?attr/actionModeShareDrawable"
-            app:iconTint="#052F5F" />
+            app:iconTint="#A0C3EE" />
 
         <Button
             android:id="@+id/btnSalvar"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="65dp"
             android:layout_weight="1"
-            android:backgroundTint="#D5C67A"
+            android:backgroundTint="#495A6E"
             android:text="Salvar"
-            android:textColor="#052F5F"
+            android:textColor="#A0C3EE"
             app:cornerRadius="40dp"
             app:icon="@android:drawable/ic_menu_save"
-            app:iconTint="#052F5F" />
+            app:iconTint="#A0C3EE" />
     </LinearLayout>
 
     <TextView
@@ -210,13 +211,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/result_titulo"
-        android:textColor="@color/white"
+        android:textColor="#495A6E"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358" />
 </androidx.constraintlayout.widget.ConstraintLayout>
